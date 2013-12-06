@@ -32,8 +32,8 @@ production:
         target: rails
         run_on: all_servers
     # 6. Move thin config to server
-      - source: /config/cloud/cloud66/files/thin.yml
-        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/thin.yml
+      - source: /config/cloud/cloud66/files/unicorn.rb
+        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/unicorn.rb
         target: rails
         run_on: all_servers
     after_rails:
@@ -115,8 +115,8 @@ staging:
         target: rails
         run_on: all_servers
     # 6. Move thin config to server
-      - source: /config/cloud/cloud66/files/thin.yml
-        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/thin.yml
+      - source: /config/cloud/cloud66/files/unicorn.rb
+        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/unicorn.rb
         target: rails
         run_on: all_servers
     after_rails:
@@ -193,8 +193,8 @@ development:
         parse: false
         run_on: all_servers
     # 5. Move thin config to server
-      - source: /config/cloud/cloud66/files/thin.yml
-        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/thin.yml
+      - source: /config/cloud/cloud66/files/unicorn.rb
+        destination: <%= ENV['RAILS_STACK_PATH'] %>/config/unicorn.rb
         target: rails
         run_on: all_servers
     after_rails:
